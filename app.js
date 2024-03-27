@@ -13,8 +13,9 @@ functions.cloudEvent('verifyEmailPubSub', cloudEvent => {
   const name = base64name
     ? Buffer.from(base64name, 'base64').toString()
     : 'World';
-    console.log(`Sent an email to, ${name}!`);
-    const emailID = JSON.parse(name);
-    run(emailID, uuidv4());
+    const payload = JSON.parse(name);
+    const {email, first_name, last_name} = payload
+    console.log(`Sent an email to, ${email}, ${first_name} ${last_name}!`);
+    run(email, uuidv4(), first_name, last_name);
 });
 // run('sagarlm10@gmail.com', uuidv4());

@@ -5,7 +5,7 @@ const mailchimp = require("@mailchimp/mailchimp_transactional")(
   const addTokenDetails = require('./tokenController');
   const sendHTML = require('./sendhtml');
   
-  async function run(email, uuid) {
+  async function run(email, uuid, first_name, last_name) {
     console.log(email, uuid);
     const response = await mailchimp.messages.send({
         message: {
@@ -13,7 +13,7 @@ const mailchimp = require("@mailchimp/mailchimp_transactional")(
             inline_css: true,
             from_email: "csye6225@anirudhadudhasagare.me",
             subject: "Verify your Account with us",
-            html: sendHTML(email, uuid),
+            html: sendHTML(email, uuid, first_name, last_name),
             to: [
               {
                 email: `${email}`,

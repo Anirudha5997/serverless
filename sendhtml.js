@@ -1,4 +1,4 @@
-const sendHTML = (email,uuid) => {
+const sendHTML = (email, uuid, first_name, last_name) => {
     return`<!DOCTYPE html>
     <html>
     <head>
@@ -147,7 +147,7 @@ const sendHTML = (email,uuid) => {
 
               <tr>
                 <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;">
-                  <h3 style="margin: 0; font-size: 20px; font-weight: 700;"> Hello ${email}, </h3>
+                  <h3 style="margin: 0; font-size: 20px; font-weight: 700;"> Hello ${first_name} ${last_name}, </h3>
                 </td>
               </tr>
             </table>
@@ -187,7 +187,7 @@ const sendHTML = (email,uuid) => {
                         <table border="0" cellpadding="0" cellspacing="0">
                           <tr>
                             <td align="center" bgcolor="#1a82e2" style="border-radius: 6px;">
-                              <a href="http://anirudhadudhasagare.me:8000/v1/verify${email}/${uuid}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;"> Verify Your Account </a>
+                              <a href="http://anirudhadudhasagare.me:8000/v1/verify/${email}/${uuid}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;"> Verify Your Account </a>
                             </td>
                           </tr>
                         </table>
